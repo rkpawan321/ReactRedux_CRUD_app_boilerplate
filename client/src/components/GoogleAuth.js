@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signIn, signOut } from '../actions';
+import { GOOGLE_CLIENT_ID } from '../../constants';
 
 class GoogleAuth extends React.Component {
     state = {
@@ -9,7 +10,7 @@ class GoogleAuth extends React.Component {
     componentDidMount() {
         window.gapi.load('client:auth2 ', () => {
             window.gapi.client.init({
-                clientId: '750879000653-9s3hdfjops0c83d1krnc1h3kdb4at4ud.apps.googleusercontent.com',
+                clientId: GOOGLE_CLIENT_ID,
                 scope: 'email'
             }).then(() => {
                 this.auth = window.gapi.auth2.getAuthInstance();   // crrating instance  // prototype class, not the real class
