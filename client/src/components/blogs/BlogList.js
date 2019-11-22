@@ -1,21 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchStreams } from '../../actions';
+import { fetchBlogs } from '../../actions';
 
-class StreamList extends React.Component {
+class BlogList extends React.Component {
     componentDidMount() {
-        this.props.fetchStreams();
+        this.props.fetchBlogs();
     };
 
-    renderAdmin(stream) {
-        if (stream.userId === this.props.currentUserId) {
+    renderAdmin(blog) {
+        if (blog.userId === this.props.currentUserId) {
             return (
                 <div className="right floated content">
-                       <Link to={`/streams/edit/${stream.id}`} className="ui button primary">
+                       <Link to={`/blogs/edit/${blog.id}`} className="ui button primary">
                            Edit
                        </Link>
-                       <Link to={`/streams/delete/${stream.id}`} className="ui button negative">
+                       <Link to={`/blogs/delete/${blog.id}`} className="ui button negative">
                        Delete
                        </Link>
                 </div>)
@@ -27,8 +27,8 @@ class StreamList extends React.Component {
         if (this.props.isSignedIn) {
             return (
                 <div style={{ textAlign: 'right' }}>
-                    <Link to="/streams/new" className="ui button primary">
-                        Create Stream
+                    <Link to="/blogs/new" className="ui button primary">
+                        Create Blog
         </Link> 
                 </div>
             )
@@ -37,16 +37,16 @@ class StreamList extends React.Component {
     };
 
     renderList() {
-        return this.props.streams.map(stream => {
+        return this.props.blogs.map(blog => {
             return (
-                <div className="item" key={stream.id}>
-                    {this.renderAdmin(stream)}
+                <div className="item" key={blog.id}>
+                    {this.renderAdmin(blog)}
                     <i className="large middle aligned icon camera" />
                     <div className="content">
-                        <Link to={`/streams/${stream.id}`} className="header">
-                        {stream.title}
+                        <Link to={`/blogs/${blog.id}`} className="header">
+                        {blog.title}
                         </Link>
-                        <div className="description">{stream.description}</div>
+                        <div className="description">{blog.description}</div>
                     </div>
                 </div> 
             );
@@ -56,7 +56,7 @@ class StreamList extends React.Component {
         return (
             <div>
                 <h2>
-                    Streams</h2>
+                    Blogs</h2>
                 <div className="ui celled list">
                     {this.renderList()}
                 </div> 
@@ -68,10 +68,10 @@ class StreamList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        streams: Object.values(state.streams),
+        blogs: Object.values(state.blogs),
         currentUserId: state.auth.userId,
         isSignedIn: state.auth.isSignedIn,
     };
 }
 
-export default connect(mapStateToProps, { fetchStreams })(StreamList);
+export default connect(mapStateToProps, { fetchBlogs })(BlogList);

@@ -1,13 +1,13 @@
-import streams from '../services/streams';
+import blogs from '../services/blogs';
 import history from '../history';
 import {
     SIGN_IN,
     SIGN_OUT,
-    CREATE_STREAM,
-    FETCH_STREAM,
-    FETCH_STREAMS,
-    DELETE_STREAM,
-    EDIT_STREAM,
+    CREATE_BLOG,
+    FETCH_BLOG,
+    FETCH_BLOGS,
+    DELETE_BLOG,
+    EDIT_BLOG,
 } from './types';
 
 export const signIn = (userId) => {
@@ -23,32 +23,32 @@ export const signOut = () => {
     };
 };
 
-export const createStream = (formValues) => async (dispatch, getState) => {
+export const createBlog = (formValues) => async (dispatch, getState) => {
     const { userId } = getState().auth;
-    const response = await streams.post('/streams', { ...formValues, userId });
-    dispatch({ type: CREATE_STREAM, payload: response.data });
+    const response = await blogs.post('/blogs', { ...formValues, userId });
+    dispatch({ type: CREATE_BLOG, payload: response.data });
     history.push('/');// PROGRAMMATIC NAVIGATION 
 };
 
-export const fetchStreams = () => async dispatch => {
-    const response = await streams.get('/streams');
-    dispatch({ type: FETCH_STREAMS, payload: response.data });
+export const fetchBlogs = () => async dispatch => {
+    const response = await blogs.get('/blogs');
+    dispatch({ type: FETCH_BLOGS, payload: response.data });
 };
 
-export const fetchStream = (id) => async dispatch => {
-    const response = await streams.get(`/streams/${id}`);
-    dispatch({ type: FETCH_STREAM, payload: response.data });
+export const fetchBlog = (id) => async dispatch => {
+    const response = await blogs.get(`/blogs/${id}`);
+    dispatch({ type: FETCH_BLOG, payload: response.data });
 };
 
-export const editStream = (id, formValues) => async dispatch => {
-    const response = await streams.patch(`/streams/${id}`, formValues);
-    dispatch({ type: EDIT_STREAM, payload: response.data });
+export const editBlog = (id, formValues) => async dispatch => {
+    const response = await blogs.patch(`/blogs/${id}`, formValues);
+    dispatch({ type: EDIT_BLOG, payload: response.data });
     history.push('/');
 };
 
-export const deleteStream = (id) => async dispatch => {
-    await streams.delete(`/streams/${id}`);
-    dispatch({ type: DELETE_STREAM, payload: id });
+export const deleteBlog = (id) => async dispatch => {
+    await blogs.delete(`/blogs/${id}`);
+    dispatch({ type: DELETE_BLOG, payload: id });
     history.push('/');
 };
 

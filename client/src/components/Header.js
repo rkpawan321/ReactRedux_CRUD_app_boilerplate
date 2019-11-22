@@ -7,13 +7,20 @@ const Header = () => {
     <div className="ui secondary pointing menu">
 
     <Link to="/" className="item">
-        Streamer
+    <div style={{paddingTop: 5}}>
+        <h1>A Nice Blog App</h1>
+        </div>
+        <h6>        (Please Login to post a blog.)</h6>
     </Link>
     <div className="right menu">
+    <div style={{paddingTop: 22}}>
     <Link to="/" className="item">
-        All Streams
+        All Blogs
     </Link>
+    </div>
+    <div style={{paddingTop: 20}}>
     <GoogleAuth/>
+    </div>
     
     </div>
     </div>

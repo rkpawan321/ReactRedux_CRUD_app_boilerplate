@@ -1,10 +1,10 @@
 import _ from 'lodash';
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchStream} from '../../actions';
-class StreamShow extends React.Component {
+import {fetchBlog} from '../../actions';
+class BlogShow extends React.Component {
     componentDidMount(){
-        this.props.fetchStream(this.props.match.params.id);
+        this.props.fetchBlog(this.props.match.params.id);
     }
 
     render(){ 
@@ -26,4 +26,4 @@ const mapStateToProps = (state, ownProps) => {
    // console.log(ownProps);
     return {stream : state.streams[ownProps.match.params.id] };  //Stream that user is trying to edit
 }
-export default connect(mapStateToProps,{fetchStream})(StreamShow); 
+export default connect(mapStateToProps,{fetchBlog})(BlogShow); 

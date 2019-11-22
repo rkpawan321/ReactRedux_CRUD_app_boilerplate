@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-class StreamForm extends React.Component {
+class BlogForm extends React.Component {
 
     renderError = ({ error, touched }) =>  {
         if (touched && error) {
@@ -59,5 +59,5 @@ const validate = (formValues) => {    // we get the eror message, if the field n
 export default reduxForm({
     form: 'streamForm',
     validate
-})(StreamForm);
+})(BlogForm);
  
