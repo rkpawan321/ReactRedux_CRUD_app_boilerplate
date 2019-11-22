@@ -1,5 +1,6 @@
 # ReactRedux_CRUD_app_boilerplate
 This is a (CRUD) web app based on React-Redux 
+Requirements: Nodejs, VSCode, Chrome Browser.
 
 What does it do ?
 This is a simple blog app where any user can login using Google and post their blog.
@@ -24,5 +25,5 @@ How do I get it running in my system locally ?
 2) Terminal1 ==> cd client ==> npm start (This is the main app which runs on localhost:3000)
 3) Terminal2 ==> cd api ==> npm start (This is basically the database where our blog, user data resides. This is made possible using JSON server.
 
-#Mail for any questions/queries.
+#Mail for any suggestions/questions/queries.
 rkpawan321@gmail.com
