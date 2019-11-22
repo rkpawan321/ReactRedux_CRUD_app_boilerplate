@@ -17,7 +17,7 @@ class BlogEdit extends React.Component {
             return <div>Loading...</div>
         }      return(
           <div>
-              <h3>Edit a stream</h3> 
+              <h3>Edit a blog</h3> 
               <BlogFrom 
             //   initialValues={{ title: 'EDIT ME', description: 'CHANGE ME TOO'}} 
               initialValues={_.pick(this.props.blog, 'title', 'description')} 
