@@ -35,6 +35,7 @@ class BlogEdit extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
    // console.log(ownProps);
-    return {blog : state.blogs[ownProps.match.params.id] };  //Stream that user is trying to edit
+    return {blog : state.blogs[ownProps.match.params.id] };  //Blog
+    // that user is trying to edit
 }
 export default connect(mapStateToProps,{fetchBlog, editBlog})(BlogEdit); 

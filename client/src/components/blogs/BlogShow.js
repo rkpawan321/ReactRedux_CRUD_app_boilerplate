@@ -8,7 +8,7 @@ class BlogShow extends React.Component {
     }
 
     render(){ 
-        if(!this.props.stream){
+        if(!this.props.blog){
             return <div>Loading...</div>
         }  
         const { title, description } = this.props.stream;
@@ -24,6 +24,6 @@ class BlogShow extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
    // console.log(ownProps);
-    return {stream : state.streams[ownProps.match.params.id] };  //Stream that user is trying to edit
+    return {blog : state.blogs[ownProps.match.params.id] };  //Stream that user is trying to edit
 }
 export default connect(mapStateToProps,{fetchBlog})(BlogShow); 

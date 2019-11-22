@@ -25,17 +25,17 @@ class BlogDelete extends React.Component {
     }
 
     renderContent() {
-        if(!this.props.stream){
-            return 'Are you sure you want to delete the stream?'
+        if(!this.props.blog){
+            return 'Are you sure you want to delete the blog?'
         } 
-        return `Are you sure you want to delete the stream with title :'${this.props.stream.title}'`
+        return `Are you sure you want to delete the blog with title :'${this.props.blog.title}'`
     }
 
     render() {
       
         return <div> 
     <Modal
-                title="Delete Stream"
+                title="Delete Blog"
                 content={this.renderContent()}
                 actions={this.renderActions()}
                 onDismiss={() => { history.push('/') }}
@@ -45,7 +45,7 @@ class BlogDelete extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return {stream : state.streams[ownProps.match.params.id] };  //Stream that user is trying to edit
+    return {blog : state.blogs[ownProps.match.params.id] };  //Blog that user is trying to edit
 }
 
 export default connect(mapStateToProps, {fetchBlog, deleteBlog})(BlogDelete);
