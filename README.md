@@ -1,5 +1,6 @@
 # ReactRedux_CRUD_app_boilerplate
 This is a (CRUD) web app based on React-Redux 
+Requirements: Nodejs, VSCode, Chrome Browser.
 
 What does it do ?
 This is a simple blog app where any user can login using Google and post their blog.
