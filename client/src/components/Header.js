@@ -8,7 +8,7 @@ const Header = () => {
 
     <Link to="/" className="item">
     <div style={{paddingTop: 5}}>
-        <h1>A Pawsome Blog App</h1>
+        <h1>A Pawesome Blog App</h1>
         </div>
         <h6>        (Please Login to post a blog.)</h6>
     </Link>
