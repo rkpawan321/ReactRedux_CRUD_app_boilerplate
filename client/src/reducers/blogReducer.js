@@ -10,9 +10,7 @@ import {
 export default (state = {}, action) => {
     switch (action.type) {
         case FETCH_BLOGS:
-            return { ...state, ..._.mapKeys(action.payload, 'id')}   //we take the list of streams from api and then 
-            // we create object out of it using mapKeys lodash  (Array ====> Object )
-            //keys  inside object are going to be ids of individual streams itself
+            return { ...state, ..._.mapKeys(action.payload, 'id')}  
         case FETCH_BLOG:
             return { ...state, [action.payload.id]: action.payload };
         case CREATE_BLOG:
