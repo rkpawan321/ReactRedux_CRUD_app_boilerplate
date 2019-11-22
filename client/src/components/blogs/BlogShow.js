@@ -11,11 +11,12 @@ class BlogShow extends React.Component {
         if(!this.props.blog){
             return <div>Loading...</div>
         }  
-        const { title, description } = this.props.blog;
+        const { title, description, content } = this.props.blog;
        return(
            <div>
     <h1> {title}</h1>
        <h3>{description}</h3>
+       <h3>{content}</h3>
            </div>
        );
     }

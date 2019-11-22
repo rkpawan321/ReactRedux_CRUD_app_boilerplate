@@ -37,6 +37,7 @@ class BlogForm extends React.Component {
             <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
                 <Field name="title" component={this.renderInput} label="Enter Title" />
                 <Field name="description" component={this.renderInput} label="Enter Description " />
+                <Field name="content" component={this.renderInput} label="Enter Content " />
                 <button className="ui button primary">Submit</button>
                 {/* A field can be text-input, dropdown, radio-button, checkbox */}
             </form>);
@@ -51,6 +52,9 @@ const validate = (formValues) => {    // we get the eror message, if the field n
     }
     if (!formValues.description) {
         errors.description = 'You must enter a description';
+    }
+    if (!formValues.content) {
+        errors.content = 'You must enter a content';
     }
     return errors;
 };
