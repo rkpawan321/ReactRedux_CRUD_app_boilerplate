@@ -13,7 +13,7 @@ class BlogShow extends React.Component {
         }  
         const { title, description, content } = this.props.blog;
        return(
-           <div>
+           <div style={{padding: 30}}>
     <h1> {title}</h1>
        <h3>{description}</h3>
        <h3>{content}</h3>
