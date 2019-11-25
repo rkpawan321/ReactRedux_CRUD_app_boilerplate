@@ -1,5 +1,7 @@
 # ReactRedux_CRUD_app_boilerplate
-This is a (CRUD) web app based on React-Redux 
+This is a (CRUD) web app based on React-Redux.
+
+
 Requirements: Nodejs, VSCode, Chrome Browser.
 
 What does it do ?
