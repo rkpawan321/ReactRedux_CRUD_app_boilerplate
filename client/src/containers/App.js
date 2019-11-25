@@ -1,11 +1,11 @@
 import React from 'react';
 import { Router, Route, Switch  } from 'react-router-dom';
-import BlogCreate from './blogs/BlogCreate';
-import BlogEdit from './blogs/BlogEdit';
-import BlogDelete from './blogs/BlogDelete';
-import BlogList from './blogs/BlogList';
-import BlogShow from './blogs/BlogShow';
-import Header from './Header';
+import BlogCreate from '../components/blogs/BlogCreate';
+import BlogEdit from '../components/blogs/BlogEdit';
+import BlogDelete from '../components/blogs/BlogDelete';
+import BlogList from '../components/blogs/BlogList';
+import BlogShow from '../components/blogs/BlogShow';
+import Header from '../components/Header';
 import history from '../history';
 
 const App = () => {
